@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+    <table border="1" width="100%" height="600">
+
+        <tr>
+            <!-- Sidebar -->
+            <td width="250" valign="top">
+                <h2>Alif Indra Aufakhi Akrom</h2>
+                <h2>250411100179</h2>
+                <h2>Teknik Informatika</h2>
+                <h3>materi</h3>
+
+
+                <ul>
+                    <li><a href="index.html">Sistem Persamaan Linear</a></li>
+                    <li><a href="materi 5.html">Transformasi</a></li>      
+                    <li><a href="transformasi matriks.html">Transformasi Matriks</a></li>
+                    <li><a href="determinan.html">Determinan</a></li>
+                    <li><a href="vektor.html">Vektor</a></li>
+                    <li><a href="SVD.html">Singular Value Decomposition</a></li>
+                    <li><a href="dekomposisi.html">Matriks Dekomposisi</a></li>
+                    <li><a href="tugas.html">Tugas determinan, dekomposisi, dan invers</a></li>
+                </ul>
+
+            </td>
+
+            <!-- Isi Content -->
+            <td valign="top">
+                <h1>Transformasi Matriks</h1> 
+    <img src="grafik.png" alt="Grafik Transformasi" style="width:400px;height:300px;">
+<p>Analisis transformasi titik berdasarkan grafik:</p>
+
+<hr>
+
+<h2>1. Transformasi A → B</h2>
+
+<p>Titik awal: $$ A = (2,3) $$</p>
+<p>Titik tujuan: $$ B = (2,1) $$</p>
+
+<p>Perubahan:</p>
+<p>
+$$
+\Delta x = 2 - 2 = 0
+$$
+$$
+\Delta y = 1 - 3 = -2
+$$
+</p>
+
+<p>Vektor translasi:</p>
+
+
+<p>Verifikasi:</p>
+<p>
+$$
+(2,3) + \begin{bmatrix} 0 \\ -2 \end{bmatrix} = (2,1)
+$$
+</p>
+
+<hr>
+
+<h2>2. Transformasi B → C</h2>
+
+<p>Titik awal: $$ B = (2,1) $$</p>
+<p>Titik tujuan: $$ C = (4,1) $$</p>
+
+<p>Perubahan:</p>
+<p>
+$$
+\Delta x = 4 - 2 = 2
+$$
+$$
+\Delta y = 1 - 1 = 0
+$$
+</p>
+
+<p>Vektor translasi:</p>
+
+<p>Verifikasi:</p>
+<p>
+$$
+(2,1) + \begin{bmatrix} 2 \\ 0 \end{bmatrix} = (4,1)
+$$
+</p>
+
+<hr>
+
+<h2>3. Transformasi D → E</h2>
+
+<p>Titik awal: $$ D = (2,4) $$</p>
+<p>Titik tujuan: $$ E = (2,0) $$</p>
+
+<p>Perubahan:</p>
+<p>
+$$
+\Delta x = 2 - 2 = 0
+$$
+$$
+\Delta y = 0 - 4 = -4
+$$
+</p>
+
+<p>Vektor translasi:</p>
+
+<p>Verifikasi:</p>
+<p>
+$$
+\begin{bmatrix} 0 \\ -4 \end{bmatrix}
+$$
+</p>
+<p>Verifikasi:</p>
+<p>
+$$ 
+(2,4) + \begin{bmatrix} 0 \\ -4 \end{bmatrix} = (2,0)
+$$
+</p>
+
+<hr>
+
+<h2>4. Transformasi E → F</h2>
+
+<p>Titik awal: $$ E = (2,0) $$</p>
+<p>Titik tujuan: $$ F = (4,0) $$</p>
+
+<p>Perubahan:</p>
+<p>
+$$
+\Delta x = 4 - 2 = 2
+$$
+$$
+\Delta y = 0 - 0 = 0
+$$
+</p>
+
+<p>Vektor translasi:</p>
+
+
+<p>Verifikasi:</p>
+<p>
+$$
+(2,0) + \begin{bmatrix} 2 \\ 0 \end{bmatrix} = (4,0)
+$$
+</p>
+
+<hr>
+
+<h2>Kesimpulan</h2>
+
+<p>
+$$ A \rightarrow B : \begin{bmatrix} 0 \\ -2 \end{bmatrix} $$
+</p>
+<p>
+$$ B \rightarrow C : \begin{bmatrix} 2 \\ 0 \end{bmatrix} $$
+</p>
+<p>
+$$ D \rightarrow E : \begin{bmatrix} 0 \\ -4 \end{bmatrix} $$
+</p>
+<p>
+$$ E \rightarrow F : \begin{bmatrix} 2 \\ 0 \end{bmatrix} $$
+</p>
+
+<hr>
+
+<h2>Penjelasan</h2>
+
+<p>
+Setiap pasangan titik mengalami perubahan posisi yang berbeda.
+Ada yang berpindah secara vertikal dan ada juga yang horizontal.
+Karena tidak memiliki pola perubahan yang sama, transformasi ini
+tidak bisa dinyatakan dalam satu matriks tunggal, melainkan berupa
+beberapa translasi yang berdiri sendiri.
+</p>
+            </td>
+        </tr>
+
+    </table>
+</body>
+</html>

@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sidebar</title>
+</head>
+<body>
+ <link rel="stylesheet" href="style.css">
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <table border="1" width="100%" height="600">
+
+        <tr>
+            <!-- Sidebar -->
+            <td width="250" valign="top">
+                <h2>Alif Indra Aufakhi Akrom</h2>
+                <h2>250411100179</h2>
+                <h2>Teknik Informatika</h2>
+
+                <h3>materi</h3>
+
+
+                <ul>
+                    <li><a href="index.html">Sistem Persamaan Linear</a></li>
+                    <li><a href="materi 5.html">Transformasi</a></li>      
+                    <li><a href="transformasi matriks.html">Transformasi Matriks</a></li>
+                    <li><a href="determinan.html">Determinan</a></li>
+                    <li><a href="vektor.html">Vektor</a></li>
+                    <li><a href="SVD.html">Singular Value Decomposition</a></li>
+                    <li><a href="dekomposisi.html">Matriks Dekomposisi</a></li>
+                    <li><a href="tugas.html">Tugas determinan, dekomposisi, dan invers</a></li>
+                </ul>
+
+            </td>
+
+            <!-- Isi Content -->
+            <td valign="top">
+
+                <div class="container">
+        <section class="card">
+            <h1>Apa itu Sistem Persamaan Linear?</h1>
+            <p>Sistem persamaan linier adalah sekumpulan dua atau lebih persamaan matematika berbentuk linier (berderajat satu) yang memiliki variabel yang sama dan harus dipenuhi secara bersamaan. Persamaan linier sendiri adalah persamaan yang setiap variabelnya hanya berpangkat satu dan tidak saling dikalikan.</p>
+            
+            <div class="math-box">
+                <strong>Bentuk Umum:</strong><br>
+                \[\begin{aligned}
+                a_{11}x_1 + a_{12}x_2 + \cdots + a_{1n}x_n &= b_1 \\
+                a_{21}x_1 + a_{22}x_2 + \cdots + a_{2n}x_n &= b_2 \\
+                \vdots \\
+                a_{m1}x_1 + a_{m2}x_2 + \cdots + a_{mn}x_n &= b_m
+                \end{aligned}
+                \]
+            </div>
+
+            <h2>Matriks Representasi</h2>
+            <p>Sistem ini dapat direpresentasikan sebagai \(A \cdot X = B\), di mana:</p>
+            <ul>
+                <li><strong>A</strong>: Matriks koefisien.</li>
+                <li><strong>X</strong>: Vektor variabel.</li>
+                <li><strong>B</strong>: Vektor konstanta.</li>
+            </ul>
+        </section>
+
+        <section class="card">
+            <h2>Jenis-Jenis Solusi</h2>
+            <div class="grid">
+                <div class="item"><strong>Solusi Tunggal:</strong> Hanya ada satu set nilai variabel.</div>
+                <div class="item"><strong>Tidak Ada Solusi:</strong> Sistem inkonsisten (garis sejajar).</div>
+                <div class="item"><strong>Solusi Tak Terhingga:</strong> Sistem dependen (garis berhimpit).</div>
+            </div>
+
+            <h2>Contoh Grafis (2D)</h2>
+            <div class="grid">
+                <div class="item"><strong>Garis Berpotongan:</strong> Solusi tunggal.</div>
+                <div class="item"><strong>Garis Sejajar:</strong> Tidak ada solusi.</div>
+                <div class="item"><strong>Garis Berimpit:</strong> Solusi tak terhingga.</div>
+            </div>
+
+            <h2>Metode Penyelesaian</h2>
+            <p>Metode Penyelesaian Sistem Persamaan Linear:</p>
+            <ul>
+                <li><strong>Metode Subtitusi</strong>
+                <li><strong>Metode Eliminasi</strong>
+                <li><strong>Metode Matriks (Gauss/Gauss-Jordan)</strong>
+                <li><strong>Metode Grafik</strong>
+            </ul>
+                
+            
+        </section>
+    </div>
+
+    <div class="container">
+        <section class="card">
+            <h1>Eksplorasi Mendalam Sistem Persamaan Linear</h1>
+            <p>Sistem Persamaan Linear (SPL) bukan sekadar kumpulan angka, melainkan representasi dari titik temu berbagai kondisi atau batasan dalam matematika. Menyelesaikan SPL berarti mencari "titik keseimbangan" di mana semua persamaan terpenuhi secara simultan.</p>
+        </section>
+
+        <section class="card border-accent">
+            <h2>1.1 Analisis Konsistensi dan Jenis Solusi</h2>
+            <p>Berdasarkan keberadaan solusinya, SPL diklasifikasikan menjadi dua kategori utama:</p>
+            <div class="grid">
+                <div class="item">
+                    <strong>1. Sistem Konsisten</strong>
+                    <p>Sistem yang memiliki setidaknya satu solusi. Dibagi menjadi:</p>
+                    <ul>
+                        <li><em>Determinate:</em> Memiliki tepat satu solusi unik (Garis berpotongan).</li>
+                        <li><em>Indeterminate:</em> Memiliki tak hingga banyak solusi (Garis berhimpit).</li>
+                    </ul>
+                </div>
+                <div class="item">
+                    <strong>2. Sistem Inkonsisten</strong>
+                    <p>Sistem yang tidak memiliki solusi sama sekali. Secara geometris, ini direpresentasikan oleh garis-garis yang sejajar namun tidak berhimpit, sehingga tidak pernah ada titik temu.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="card">
+            <h2>1.2 Representasi Matriks Teraugmentasi (Augmented Matrix)</h2>
+            <p>Untuk efisiensi komputasi, SPL sering ditulis dalam bentuk matriks teraugmentasi. Misalkan kita memiliki sistem:</p>
+            <div class="math-box">
+                \[
+                \begin{aligned}
+                a_{11}x + a_{12}y &= b_1 \\
+                a_{21}x + a_{22}y &= b_2
+                \end{aligned}
+                \]
+            </div>
+            <p>Maka bentuk matriks teraugmentasinya adalah gabungan dari matriks koefisien \(A\) dan vektor konstanta \(B\):</p>
+            <div class="math-box">
+                \[ [A | B] = \left[ \begin{array}{cc|c} a_{11} & a_{12} & b_1 \\ a_{21} & a_{22} & b_2 \end{array} \right] \]
+            </div>
+        </section>
+
+        <section class="card">
+            <h2>1.3 Simulasi Penyelesaian Manual: Metode Campuran</h2>
+            <p>Selesaikan SPL berikut:</p>
+            <div class="math-box">
+                (1) \( 3x + 2y = 18 \) <br>
+                (2) \( x - y = 1 \)
+            </div>
+
+            <h3>Langkah 1: Manipulasi Persamaan</h3>
+            <p>Kita gunakan metode eliminasi. Kalikan persamaan (2) dengan angka 2 agar koefisien \(y\) bisa dihilangkan:</p>
+            <div class="math-box">
+                \( (2) \times 2 \rightarrow 2x - 2y = 2 \)
+            </div>
+
+            <h3>Langkah 2: Proses Eliminasi</h3>
+            <p>Jumlahkan persamaan (1) dengan hasil manipulasi persamaan (2):</p>
+            <div class="math-box">
+                \( (3x + 2y) + (2x - 2y) = 18 + 2 \) <br>
+                \( 5x = 20 \rightarrow \mathbf{x = 4} \)
+            </div>
+
+            <h3>Langkah 3: Substitusi Balik</h3>
+            <p>Masukkan nilai \(x = 4\) ke persamaan (2) yang paling sederhana:</p>
+            <div class="math-box">
+                \( 4 - y = 1 \rightarrow y = 4 - 1 \rightarrow \mathbf{y = 3} \)
+            </div>
+            <p>Jadi, solusi sistem adalah <strong>(4, 3)</strong>.</p>
+        </section>
+
+        <section class="card">
+            <h2>1.4 Aplikasi SPL dalam dunia nyata</h2>
+            <p>Berdasarkan materi yang dipelajari, SPL bukan hanya soal angka, tapi digunakan dalam:</p>
+            <ul class="step-list">
+                <li><strong>Ekonomi:</strong> Menyeimbangkan kurva penawaran (supply) dan permintaan (demand).</li>
+                <li><strong>Fisika:</strong> Menghitung resultan gaya pada struktur bangunan.</li>
+                <li><strong>Ilmu komputer:</strong> Algoritma <em>Machine Learning</em> dan grafika komputer.</li>
+            </ul>
+        </section>
+    </div>
+
+    <div class="container">
+        <section class="card">
+            <h1>Operasi Baris Elementer (OBE)</h1>
+            <p>Operasi Baris Elementer adalah serangkaian langkah matematis yang digunakan untuk mentransformasi matriks tanpa mengubah solusi dari sistem persamaan linear tersebut. Metode ini merupakan inti dari algoritma Eliminasi Gauss.</p>
+            
+            <h3>Tiga Aturan Utama OBE:</h3>
+            <div class="grid">
+                <div class="item">
+                    <strong>1. Pertukaran Baris</strong><br>
+                    Menukarkan posisi dua baris (persamaan) dalam matriks. <br>
+                    <em>Simbol: \(R_i \leftrightarrow R_j\)</em>
+                </div>
+                <div class="item">
+                    <strong>2. Perkalian Skalar</strong><br>
+                    Mengalikan suatu baris dengan bilangan real apa pun yang bukan nol. <br>
+                    <em>Simbol: \(k \cdot R_i\)</em>
+                </div>
+                <div class="item">
+                    <strong>3. Penjumlahan Baris</strong><br>
+                    Menggantikan suatu baris dengan hasil penjumlahan baris itu sendiri dengan kelipatan baris lainnya. <br>
+                    <em>Simbol: \(R_i + k \cdot R_j\)</em>
+                </div>
+            </div>
+        </section>
+
+        <section class="card">
+            <h2>2.1 Tahapan Eliminasi Gauss & Gauss-Jordan</h2>
+            <p>Tujuan akhir dari OBE adalah mengubah matriks menjadi salah satu dari dua bentuk berikut:</p>
+            <ul>
+                <li><strong>Matriks Eselon Baris:</strong> Membentuk pola tangga di mana elemen di bawah "Utama 1" adalah nol.</li>
+                <li><strong>Matriks Eselon Baris Terreduksi:</strong> Lanjutan dari eselon baris di mana elemen di atas "Utama 1" juga bernilai nol (Metode Gauss-Jordan).</li>
+            </ul>
+
+            <div class="math-box">
+                <strong>Alur Kerja:</strong><br>
+                Matriks Koefisien \((A|B)\) \(\rightarrow\) OBE \(\rightarrow\) Matriks Eselon \(\rightarrow\) Substitusi Balik.
+            </div>
+        </section>
+
+        <section class="card">
+            <h2>2.2 Studi Kasus: Sistem 3 Variabel</h2>
+            <p>Berdasarkan contoh pada materi, mari kita lihat transformasi sistem berikut:</p>
+            <div class="math-box">
+                \[
+                \begin{aligned}
+                x_1 - x_2 + x_3 &= 3 \\
+                2x_1 + x_2 + 8x_3 &= 18 \\
+                4x_1 + 2x_2 - 3x_3 &= -2
+                \end{aligned}
+                \]
+            </div>
+            
+            <h3>Langkah Penyelesaian Manual:</h3>
+            <ol>
+                <li><strong>Matriks Augmented:</strong> Menyusun angka ke dalam baris dan kolom \((A|B)\).</li>
+                <li><strong>Eliminasi Kolom 1:</strong> Menggunakan baris pertama untuk membuat nol di bawah angka 1 pada kolom pertama.</li>
+                <li><strong>Eliminasi Kolom 2:</strong> Mencari pivot baru di baris kedua dan membuat nol di bawahnya.</li>
+                <li><strong>Substitusi Balik:</strong> Setelah didapat \(x_3 = 2\), nilai ini dimasukkan ke persamaan di atasnya untuk mencari \(x_2\) dan \(x_1\).</li>
+            </ol>
+            
+            
+            
+            <div class="item" style="background-color: #fef3c7; border-left: 4px solid #f59e0b; margin-top: 15px;">
+                <strong>Hasil Akhir:</strong> Berdasarkan perhitungan manual, didapatkan solusi tunggal: \(x_1 = 1, x_2 = 0, x_3 = 2\).
+            </div>
+        </section>
+    </div>
+
+    <section class="card">
+            <h2>3.1 Hasil Visualisasi (Versi GeoGebra)</h2>
+            <p>Di bawah ini adalah representasi geometri dari perpotongan garis tersebut. Perhatikan titik pertemuannya yang konsisten dengan hasil Python:</p>
+            
+            <div class="geogebra-display" style="text-align: center; margin: 20px 0;">
+                <img src="geogebra-export.png" 
+                     alt="Grafik GeoGebra" 
+                     style="width: 100%; max-width: 600px; border-radius: 12px; border: 1px solid var(--border-line); box-shadow: 0 0 20px rgba(56, 189, 248, 0.2);">
+                
+                
+                
+                <p style="font-style: italic; color: var(--text-secondary); margin-top: 10px;">
+                    Gambar 2.1: Perpotongan garis menunjukkan solusi unik pada titik (2, 3).
+                </p>
+            </div>
+        </section>
+
+            </td>
+        </tr>
+
+    </table>
+
+</body>
+</html>

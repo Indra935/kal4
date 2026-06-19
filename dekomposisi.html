@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <link rel="stylesheet" href="style.css">
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <table border="1" width="100%" height="600">
+
+        <tr>
+            <!-- Sidebar -->
+            <td width="250" valign="top">
+                <h2>Alif Indra Aufakhi Akrom</h2>
+                <h2>250411100179</h2>
+                <h2>Teknik Informatika</h2>
+
+                <h3>materi</h3>
+
+                <ul>
+                    <li><a href="index.html">Sistem Persamaan Linear</a></li>
+                    <li><a href="materi 5.html">Transformasi</a></li>      
+                    <li><a href="transformasi matriks.html">Transformasi Matriks</a></li>
+                    <li><a href="determinan.html">Determinan</a></li>
+                    <li><a href="vektor.html">Vektor</a></li>
+                    <li><a href="SVD.html">Singular Value Decomposition</a></li>
+                    <li><a href="dekomposisi.html">Matriks Dekomposisi</a></li>
+                    <li><a href="tugas.html">Tugas determinan, dekomposisi, dan invers</a></li>
+                </ul>
+
+            </td>
+
+            <!-- Isi Content -->
+            <td valign="top">
+                <h1>Dekomposisi QR Matriks 4×4</h1>
+
+    <h2>Matriks Awal</h2>
+
+    <p>
+        Diberikan matriks \(A\) berukuran \(4 \times 4\):
+    </p>
+
+    $$
+    A=
+    \begin{bmatrix}
+    1 & 1 & 0 & 0 \\
+    1 & 0 & 1 & 0 \\
+    0 & 1 & 0 & 1 \\
+    0 & 0 & 1 & 1
+    \end{bmatrix}
+    $$
+
+    <p>
+        Akan dicari dekomposisi QR:
+    </p>
+
+    $$
+    A = QR
+    $$
+
+    <p>dengan:</p>
+
+    <ul>
+        <li>\(Q\) = matriks ortogonal</li>
+        <li>\(R\) = matriks segitiga atas (upper triangular)</li>
+    </ul>
+
+    <hr>
+
+    <h2>Langkah 1 — Ambil Vektor Kolom</h2>
+
+    <p>
+        Kolom-kolom matriks \(A\):
+    </p>
+
+    $$
+    a_1=
+    \begin{bmatrix}
+    1\\
+    1\\
+    0\\
+    0
+    \end{bmatrix}
+    ,
+    \quad
+    a_2=
+    \begin{bmatrix}
+    1\\
+    0\\
+    1\\
+    0
+    \end{bmatrix}
+    $$
+
+    $$
+    a_3=
+    \begin{bmatrix}
+    0\\
+    1\\
+    0\\
+    1
+    \end{bmatrix}
+    ,
+    \quad
+    a_4=
+    \begin{bmatrix}
+    0\\
+    0\\
+    1\\
+    1
+    \end{bmatrix}
+    $$
+
+    <hr>
+
+    <h2>Langkah 2 — Mencari Matriks \(Q\)</h2>
+
+    <p>
+        Gunakan metode Gram-Schmidt.
+    </p>
+
+    <p>
+        Normalisasi vektor pertama:
+    </p>
+
+    $$
+    ||a_1||
+    =
+    \sqrt{1^2+1^2}
+    =
+    \sqrt{2}
+    $$
+
+    <p>
+        Sehingga diperoleh:
+    </p>
+
+    $$
+    q_1=
+    \frac{1}{\sqrt{2}}
+    \begin{bmatrix}
+    1\\
+    1\\
+    0\\
+    0
+    \end{bmatrix}
+    $$
+
+    <p>
+        Setelah proses Gram-Schmidt pada seluruh kolom,
+        diperoleh matriks \(Q\):
+    </p>
+
+    $$
+    Q=
+    \begin{bmatrix}
+    0.707 & 0.408 & -0.289 & -0.500\\
+    0.707 & -0.408 & 0.289 & 0.500\\
+    0 & 0.816 & 0.289 & -0.500\\
+    0 & 0 & 0.866 & 0.500
+    \end{bmatrix}
+    $$
+
+    <hr>
+
+    <h2>Langkah 3 — Mencari Matriks \(R\)</h2>
+
+    <p>
+        Matriks \(R\) diperoleh dengan:
+    </p>
+
+    $$
+    R = Q^T A
+    $$
+
+    <p>
+        Hasil perhitungan:
+    </p>
+
+    $$
+    R=
+    \begin{bmatrix}
+    1.414 & 0.707 & 0.707 & 0\\
+    0 & 1.225 & -0.408 & 0.816\\
+    0 & 0 & 1.155 & 1.155\\
+    0 & 0 & 0 & 1
+    \end{bmatrix}
+    $$
+
+    <hr>
+
+    <h2>Hasil Akhir</h2>
+
+    <p>
+        Maka dekomposisi QR dari matriks \(A\) adalah:
+    </p>
+
+    $$
+    A = QR
+    $$
+
+    <p>Dengan:</p>
+
+    <h3>Matriks \(Q\)</h3>
+
+    $$
+    Q=
+    \begin{bmatrix}
+    0.707 & 0.408 & -0.289 & -0.500\\
+    0.707 & -0.408 & 0.289 & 0.500\\
+    0 & 0.816 & 0.289 & -0.500\\
+    0 & 0 & 0.866 & 0.500
+    \end{bmatrix}
+    $$
+
+    <h3>Matriks \(R\)</h3>
+
+    $$
+    R=
+    \begin{bmatrix}
+    1.414 & 0.707 & 0.707 & 0\\
+    0 & 1.225 & -0.408 & 0.816\\
+    0 & 0 & 1.155 & 1.155\\
+    0 & 0 & 0 & 1
+    \end{bmatrix}
+    $$
+            </td>
+        </tr>
+
+    </table>
+</body>
+</html>

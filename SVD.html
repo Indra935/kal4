@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <table border="1" width="100%" height="600">
+
+        <tr>
+            <!-- Sidebar -->
+            <td width="250" valign="top">
+                <h2>Alif Indra Aufakhi Akrom</h2>
+                <h2>250411100179</h2>
+                <h2>Teknik Informatika</h2>
+
+                <h3>materi</h3>
+
+                <ul>
+                    <li><a href="index.html">Sistem Persamaan Linear</a></li>
+                    <li><a href="materi 5.html">Transformasi</a></li>      
+                    <li><a href="transformasi matriks.html">Transformasi Matriks</a></li>
+                    <li><a href="determinan.html">Determinan</a></li>
+                    <li><a href="vektor.html">Vektor</a></li>
+                    <li><a href="SVD.html">Singular Value Decomposition</a></li>
+                    <li><a href="dekomposisi.html">Matriks Dekomposisi</a></li>
+                    <li><a href="tugas.html">Tugas determinan, dekomposisi, dan invers</a></li>
+
+                </ul>
+
+            </td>
+
+            <!-- Isi Content -->
+            <td valign="top">
+                <h1>Singular Value Decomposition (SVD)</h1>
+
+    <h2>Pendahuluan</h2>
+
+    <p>
+        Singular Value Decomposition (SVD) merupakan salah satu teknik
+        faktorisasi matriks yang sangat penting dalam aljabar linear.
+        Metode ini menguraikan sebuah matriks menjadi beberapa komponen
+        yang lebih sederhana sehingga karakteristik utama matriks dapat
+        dipahami dengan lebih mudah.
+    </p>
+
+    <p>SVD banyak dimanfaatkan dalam berbagai bidang, antara lain:</p>
+
+    <ul>
+        <li>Pemrosesan sinyal (signal processing)</li>
+        <li>Kompresi citra (image compression)</li>
+        <li>Reduksi dimensi pada machine learning</li>
+        <li>Sistem rekomendasi</li>
+        <li>Analisis data dan data mining</li>
+    </ul>
+
+    <p>Untuk memahami SVD, diperlukan pengetahuan dasar mengenai:</p>
+
+    <ul>
+        <li>Operasi matriks dan vektor</li>
+        <li>Rank matriks</li>
+        <li>Nilai eigen dan vektor eigen</li>
+        <li>Matriks ortogonal</li>
+        <li>Transformasi linear</li>
+    </ul>
+
+    <hr>
+
+    <h2>Definisi Matematis</h2>
+
+    <p>
+        Untuk suatu matriks riil \(A\) berukuran \(m \times n\),
+        dekomposisi SVD dinyatakan sebagai:
+    </p>
+
+    $$
+    A = U\Sigma V^T
+    $$
+
+    <p>dengan:</p>
+
+    <h3>1. Matriks \(U\)</h3>
+
+    <p>
+        Matriks \(U\) merupakan matriks ortogonal
+        berukuran \(m \times m\).
+    </p>
+
+    <p>Sifat pentingnya adalah:</p>
+
+    $$
+    U^TU = UU^T = I
+    $$
+
+    <p>
+        Kolom-kolom pada matriks \(U\)
+        disebut vektor singular kiri
+        (left singular vectors) dari matriks \(A\).
+    </p>
+
+    <hr>
+
+    <h3>2. Matriks \(\Sigma\)</h3>
+
+    <p>
+        Matriks \(\Sigma\) merupakan matriks diagonal
+        berukuran \(m \times n\) yang memuat
+        nilai-nilai singular (singular values)
+        pada diagonal utamanya.
+    </p>
+
+    <p>Bentuk umumnya adalah:</p>
+
+    $$
+    \Sigma =
+    \begin{bmatrix}
+    \sigma_1 & 0 & \cdots & 0 \\
+    0 & \sigma_2 & \cdots & 0 \\
+    \vdots & \vdots & \ddots & \vdots \\
+    0 & 0 & \cdots & \sigma_r
+    \end{bmatrix}
+    $$
+
+    <p>dengan:</p>
+
+    $$
+    \sigma_1 \ge \sigma_2 \ge \cdots \ge \sigma_r \ge 0
+    $$
+
+    <p>di mana:</p>
+
+    <ul>
+        <li>\(\sigma_i\) disebut nilai singular (singular value).</li>
+        <li>Semua nilai singular selalu bernilai tidak negatif.</li>
+        <li>
+            Banyaknya nilai singular yang tidak nol
+            sama dengan rank matriks \(A\).
+        </li>
+    </ul>
+
+    <p>
+        Nilai singular menunjukkan besarnya kontribusi
+        setiap arah utama dalam merepresentasikan data.
+    </p>
+
+    <hr>
+
+    <h3>3. Matriks \(V^T\)</h3>
+
+    <p>
+        Matriks \(V^T\) merupakan transpose dari
+        matriks ortogonal \(V\) yang berukuran
+        \(n \times n\).
+    </p>
+
+    <p>Sifat ortogonalnya diberikan oleh:</p>
+
+    $$
+    V^TV = VV^T = I
+    $$
+
+    <p>
+        Kolom-kolom matriks \(V\)
+        disebut vektor singular kanan
+        (right singular vectors) dari matriks \(A\).
+    </p>
+
+    <hr>
+
+    <h2>Interpretasi Geometris SVD</h2>
+
+    <p>
+        Secara geometris, SVD dapat dipandang
+        sebagai rangkaian tiga transformasi linear:
+    </p>
+
+    <ol>
+        <li>
+            Matriks \(V^T\) melakukan rotasi
+            atau refleksi terhadap data.
+        </li>
+
+        <li>
+            Matriks \(\Sigma\) melakukan penskalaan
+            (scaling) pada setiap arah utama
+            berdasarkan nilai singular.
+        </li>
+
+        <li>
+            Matriks \(U\) melakukan rotasi
+            atau refleksi kembali pada hasil
+            transformasi sebelumnya.
+        </li>
+    </ol>
+
+    <p>
+        Dengan demikian, transformasi yang dilakukan
+        oleh matriks \(A\) dapat dipahami sebagai
+        kombinasi dari rotasi, penskalaan,
+        dan rotasi kembali.
+    </p>
+
+    <hr>
+
+    <h2>Kesimpulan</h2>
+
+    <p>
+        Singular Value Decomposition (SVD)
+        merupakan metode faktorisasi matriks
+        yang menguraikan suatu matriks menjadi:
+    </p>
+
+    $$
+    A = U\Sigma V^T
+    $$
+
+    <ul>
+        <li>\(U\) berisi vektor singular kiri.</li>
+        <li>\(\Sigma\) berisi nilai singular.</li>
+        <li>\(V^T\) berisi vektor singular kanan.</li>
+    </ul>
+
+    <p>
+        Melalui dekomposisi ini, struktur suatu matriks dapat dianalisis dengan lebih mudah.
+        Oleh karena itu, SVD menjadi salah satu teknik fundamental dalam aljabar linear modern, 
+        analisis data, kompresi citra, serta berbagai aplikasi machine learning.
+    </p>
+
+    <section class="card">
+            <h2>Hasil Visualisasi versi sagemath cell</h2>
+            <p>Di bawah ini adalah SVD dari matriks 3x3.</p>
+            
+            <div class="geogebra-display" style="text-align: center; margin: 20px 0;">
+                <img src="code.png" 
+                     alt="hasil visualisasi SVD" 
+                     style="width: 100%; max-width: 600px; border-radius: 12px; border: 1px solid var(--border-line); box-shadow: 0 0 20px rgba(56, 189, 248, 0.2);">
+                
+            <div class="geogebra-display" style="text-align: center; margin: 20px 0;">
+                <img src="hasil.png" 
+                     alt="hasil visualisasi SVD" 
+                     style="width: 100%; max-width: 600px; border-radius: 12px; border: 1px solid var(--border-line); box-shadow: 0 0 20px rgba(56, 189, 248, 0.2);">    
+                
+            </div>
+        </section>
+            </td>
+        </tr>
+
+    </table>
+</body>
+</html>

@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <link rel="stylesheet" href="style.css">
+    <table border="1" width="100%" height="600">
+
+        <tr>
+            <!-- Sidebar -->
+            <td width="250" valign="top">
+                <h2>Alif Indra Aufakhi Akrom</h2>
+                <h2>250411100179</h2>
+                <h2>Teknik Informatika</h2>
+
+                <h3>materi</h3>
+
+
+                <ul>
+                    <li><a href="index.html">Sistem Persamaan Linear</a></li>
+                    <li><a href="materi 5.html">Transformasi</a></li>      
+                    <li><a href="transformasi matriks.html">Transformasi Matriks</a></li>
+                    <li><a href="determinan.html">Determinan</a></li>
+                    <li><a href="vektor.html">Vektor</a></li>
+                    <li><a href="SVD.html">Singular Value Decomposition</a></li>
+                    <li><a href="dekomposisi.html">Matriks Dekomposisi</a></li>
+                    <li><a href="tugas.html">Tugas determinan, dekomposisi, dan invers</a></li>
+                </ul>
+
+            </td>
+
+            <!-- Isi Content -->
+            <td valign="top">
+
+                <!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transformasi Matriks</title>
+</head>
+<body>
+
+    <h1>Transformasi Matriks</h1>
+    <hr>
+    <details open>
+        <summary><b>1. Transformasi A ke B</b></summary>
+
+        <h3>Titik Awal</h3>
+        <p>A = (2,3)</p>
+
+        <h3>Titik Tujuan</h3>
+        <p>B = (2,1)</p>
+
+        <h3>Langkah 1 — Cari perubahan sumbu x</h3>
+        <p>2 - 2 = 0</p>
+        <ul>
+            <li>Tidak bergeser ke kanan/kiri</li>
+        </ul>
+
+        <h3>Langkah 2 — Cari perubahan sumbu y</h3>
+        <p>1 - 3 = -2</p>
+        <ul>
+            <li>Turun 2 satuan</li>
+        </ul>
+
+        <h3>Matriks Transformasi</h3>
+        <pre>
+[ 0 ]
+[-2 ]
+        </pre>
+
+        <h3>Pembuktian</h3>
+        <p>(2,3) + [0,-2] = (2,1)</p>
+
+        <p><b>Jadi benar.</b></p>
+    </details>
+
+    <hr>
+
+    <details>
+        <summary><b>2. Transformasi B ke C</b></summary>
+
+        <h3>Titik Awal</h3>
+        <p>B = (2,1)</p>
+
+        <h3>Titik Tujuan</h3>
+        <p>C = (4,1)</p>
+
+        <h3>Langkah 1 — Perubahan sumbu x</h3>
+        <p>4 - 2 = 2</p>
+        <ul>
+            <li>Geser kanan 2 satuan</li>
+        </ul>
+
+        <h3>Langkah 2 — Perubahan sumbu y</h3>
+        <p>1 - 1 = 0</p>
+        <ul>
+            <li>Tidak naik/turun</li>
+        </ul>
+
+        <h3>Matriks Transformasi</h3>
+        <pre>
+[2]
+[0]
+        </pre>
+
+        <h3>Pembuktian</h3>
+        <p>(2,1) + [2,0] = (4,1)</p>
+
+        <p><b>Benar.</b></p>
+    </details>
+
+    <hr>
+
+    <details>
+        <summary><b>3. Transformasi D ke E</b></summary>
+
+        <h3>Titik Awal</h3>
+        <p>D = (2,4)</p>
+
+        <h3>Titik Tujuan</h3>
+        <p>E = (2,0)</p>
+
+        <h3>Langkah 1 — Perubahan sumbu x</h3>
+        <p>2 - 2 = 0</p>
+        <p>Tidak bergeser horizontal.</p>
+
+        <h3>Langkah 2 — Perubahan sumbu y</h3>
+        <p>0 - 4 = -4</p>
+        <p>Turun 4 satuan.</p>
+
+        <h3>Matriks Transformasi</h3>
+        <pre>
+[ 0 ]
+[-4 ]
+        </pre>
+
+        <h3>Pembuktian</h3>
+        <p>(2,4) + [0,-4] = (2,0)</p>
+
+        <p><b>Benar.</b></p>
+    </details>
+
+    <hr>
+
+    <details>
+        <summary><b>4. Transformasi E ke F</b></summary>
+
+        <h3>Titik Awal</h3>
+        <p>E = (2,0)</p>
+
+        <h3>Titik Tujuan</h3>
+        <p>F = (4,0)</p>
+
+        <h3>Langkah 1 — Perubahan sumbu x</h3>
+        <p>4 - 2 = 2</p>
+        <p>Geser ke kanan 2 satuan.</p>
+
+        <h3>Langkah 2 — Perubahan sumbu y</h3>
+        <p>0 - 0 = 0</p>
+        <p>Tidak berubah vertikal.</p>
+
+        <h3>Matriks Transformasi</h3>
+        <pre>
+[2]
+[0]
+        </pre>
+
+        <h3>Pembuktian</h3>
+        <p>(2,0) + [2,0] = (4,0)</p>
+
+        <p><b>Benar.</b></p>
+    </details>
+
+    <hr>
+
+    <h2>Kesimpulan</h2>
+
+    <table border="1" cellpadding="10">
+        <tr>
+            <th>Transformasi</th>
+            <th>Matriks Translasi</th>
+        </tr>
+        <tr>
+            <td>A → B</td>
+            <td>[0, -2]</td>
+        </tr>
+        <tr>
+            <td>B → C</td>
+            <td>[2, 0]</td>
+        </tr>
+        <tr>
+            <td>D → E</td>
+            <td>[0, -4]</td>
+        </tr>
+        <tr>
+            <td>E → F</td>
+            <td>[2, 0]</td>
+        </tr>
+    </table>
+
+</body>
+</html>
+                <h2>Transformasi Mendekati Sumbu X</h2>
+
+    <canvas id="grafik" width="700" height="700"></canvas>
+
+    <script>
+        const canvas = document.getElementById("grafik");
+        const ctx = canvas.getContext("2d");
+
+        // Titik awal
+        const points = {
+            A: [2, 3], B: [2, 4], C: [3, 4], D: [3, 3],
+            E: [2, -3], F: [3, -3], G: [2, -4], H: [3, -4],
+            I: [2, 2], J: [3, 2], K: [2, 1], L: [3, 1],
+            M: [2, -1], N: [3, -1], O: [2, -2], P: [3, -2]
+        };
+
+        // Kelompok kotak
+        const boxes = [
+            ["A", "B", "C", "D", "A"],
+            ["E", "F", "H", "G", "E"],
+            ["I", "J", "L", "K", "I"],
+            ["M", "N", "P", "O", "M"]
+        ];
+
+        let frame = 0;
+
+        // Skala koordinat
+        const scale = 50;
+        const originX = 350;
+        const originY = 350;
+
+        // Konversi koordinat matematika ke canvas
+        function toCanvasX(x) {
+            return originX + x * scale;
+        }
+
+        function toCanvasY(y) {
+            return originY - y * scale;
+        }
+
+        function drawAxes() {
+
+            ctx.strokeStyle = "black";
+            ctx.lineWidth = 2;
+
+            // Sumbu X
+            ctx.beginPath();
+            ctx.moveTo(0, originY);
+            ctx.lineTo(canvas.width, originY);
+            ctx.stroke();
+
+            // Sumbu Y
+            ctx.beginPath();
+            ctx.moveTo(originX, 0);
+            ctx.lineTo(originX, canvas.height);
+            ctx.stroke();
+
+            // Angka pada sumbu X
+            ctx.fillStyle = "black";
+
+            for (let x = -6; x <= 6; x++) {
+
+                let canvasX = toCanvasX(x);
+
+                // Garis kecil
+                ctx.beginPath();
+                ctx.moveTo(canvasX, originY - 5);
+                ctx.lineTo(canvasX, originY + 5);
+                ctx.stroke();
+
+                // Angka
+                ctx.fillText(x, canvasX - 5, originY + 20);
+            }
+
+            // Angka pada sumbu Y
+            for (let y = -6; y <= 6; y++) {
+
+                let canvasY = toCanvasY(y);
+
+                // Garis kecil
+                ctx.beginPath();
+                ctx.moveTo(originX - 5, canvasY);
+                ctx.lineTo(originX + 5, canvasY);
+                ctx.stroke();
+
+                // Angka
+                if (y !== 0) {
+                    ctx.fillText(y, originX - 20, canvasY + 5);
+                }
+            }
+        }
+
+        function drawGrid() {
+
+            ctx.strokeStyle = "#ddd";
+            ctx.lineWidth = 1;
+
+            for (let i = 0; i <= canvas.width; i += scale) {
+
+                ctx.beginPath();
+                ctx.moveTo(i, 0);
+                ctx.lineTo(i, canvas.height);
+                ctx.stroke();
+            }
+
+            for (let i = 0; i <= canvas.height; i += scale) {
+
+                ctx.beginPath();
+                ctx.moveTo(0, i);
+                ctx.lineTo(canvas.width, i);
+                ctx.stroke();
+            }
+        }
+
+        function draw() {
+
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+            drawGrid();
+            drawAxes();
+
+            // Transformasi mendekati sumbu X
+            let scaleY = 1 - frame / 100;
+
+            let transformed = {};
+
+            for (let nama in points) {
+
+                let [x, y] = points[nama];
+
+                let yBaru = y * scaleY;
+
+                transformed[nama] = [x, yBaru];
+            }
+
+            // Gambar kotak
+            ctx.strokeStyle = "blue";
+            ctx.lineWidth = 2;
+
+            boxes.forEach(box => {
+
+                ctx.beginPath();
+
+                box.forEach((titik, index) => {
+
+                    let [x, y] = transformed[titik];
+
+                    let canvasX = toCanvasX(x);
+                    let canvasY = toCanvasY(y);
+
+                    if (index === 0) {
+                        ctx.moveTo(canvasX, canvasY);
+                    } else {
+                        ctx.lineTo(canvasX, canvasY);
+                    }
+                });
+
+                ctx.stroke();
+            });
+
+            // Gambar titik dan nama
+            for (let nama in transformed) {
+
+                let [x, y] = transformed[nama];
+
+                let canvasX = toCanvasX(x);
+                let canvasY = toCanvasY(y);
+
+                // Titik
+                ctx.fillStyle = "red";
+
+                ctx.beginPath();
+                ctx.arc(canvasX, canvasY, 5, 0, Math.PI * 2);
+                ctx.fill();
+
+                // Nama titik
+                ctx.fillStyle = "black";
+                ctx.fillText(nama, canvasX + 8, canvasY - 8);
+            }
+
+            frame++;
+
+            if (frame > 100) {
+                frame = 0;
+            }
+
+            requestAnimationFrame(draw);
+        }
+
+        draw();
+    </script>
+            </td>
+        </tr>
+
+    </table>
+</body>
+</html>
